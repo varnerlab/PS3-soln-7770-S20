@@ -133,8 +133,8 @@ function maximize_urea_production_open(time_start,time_stop,time_step)
 	default_flux_bounds_array[20,2] = 10
 
 	# Vmax [mmol/gdw-hr] 21	[] --> M_H2O_c
-	default_flux_bounds_array[21,1] = -10
-	default_flux_bounds_array[21,2] = 10
+	default_flux_bounds_array[21,1] = 0.0
+	default_flux_bounds_array[21,2] = 0.0
 
 	# repackage -
 	data_dictionary["default_flux_bounds_array"] = default_flux_bounds_array
@@ -222,7 +222,7 @@ function DataDictionary(time_start,time_stop,time_step)
 		9.77e-4	;	# 5 M_Fumarate_c
 		0.0		;	# 6 M_H2O_c
 		0.0		;	# 7 M_H_c
-		0.0		;	# 8 M_L-Arginine_c 6.44e-4
+		6.44e-7		;	# 8 M_L-Arginine_c 6.44e-4
 		3.76e-2	;	# 9 M_L-Aspartate_c
 		0.0		;	# 10 M_L-Citrulline_c
 		0.0		;	# 11 M_L-Ornithine_c
