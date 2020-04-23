@@ -1,4 +1,23 @@
-function calculate_optimal_flux_distribution(data_dictionary)
+"""
+    calculate_optimal_flux_distribution(dictionary; min_flag=true)
+
+    Computes the optimal metabolic flux distribution given the constraints.
+
+    Inputs: a dictionary that contains:
+    `stoichiometric_matrix` - stoichiometric_matrix (M x R)
+    `default_flux_bounds_array` - (R x 2) array of the flux lower (L) and upper (U) bounds
+    `species_bounds_array` - (M x 2) array of species lower (L) and upper (U) bounds (if at steady-state, L = U = 0)
+    `objective_coefficient_array` - R x 1 vector holding indexes for objective vector
+
+    Outputs:
+    `objective_value` - value of the objective function at the optimum
+    `calculated_flux_array` - R x 1 flux array at the optimum
+    `dual_value_array` - R x 1 dual values
+    `uptake_array` - M x 1 array of S*v
+    `exit_flag` = 0 if optimal
+    `status_flag` = 5 if optimal
+"""
+function calculate_optimal_flux_distribution(data_dictionary; min_flag=true)
 
     # set some constants -
     TIME_RESTART_LIM = 60
